@@ -1,2 +1,3 @@
 [workspace]
-members = ["json", "string", "array"]
+resolver = "2"
+members = ["json", "string", "array", "url", "http"]
