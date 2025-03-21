@@ -8,3 +8,10 @@ pub type Of<T> = Vec<T>;
 pub fn create<T>() -> Vec<T> {
     Vec::new()
 }
+
+pub fn value_at_index<T>(array: Vec<T>, index: usize) -> T
+where
+    T: Clone,
+{
+    array[index].clone()
+}
