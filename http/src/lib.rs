@@ -2,17 +2,13 @@ use reqwest::{header::HeaderMap, Client};
 
 pub type Request = reqwest::Request;
 pub type Response = reqwest::Response;
-
-#[derive(Default, Clone)]
-pub struct Headers {
-    pub map: HeaderMap,
-}
+pub type Headers = HeaderMap;
 
 pub fn create_request(method: String, url: inklang_url::Url, headers: Headers) -> Request {
     let client = Client::new();
     let mut request = client.request(method.parse().unwrap(), url);
 
-    for (key, value) in headers.map.iter() {
+    for (key, value) in headers.iter() {
         request = request.header(key, value);
     }
 

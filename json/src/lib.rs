@@ -6,27 +6,27 @@ pub fn parse(json: String) -> Value {
 
 pub use inklang_json_macro::get_property;
 
-pub fn as_array(value: self::Value) -> Vec<self::Value> {
+pub fn as_array(value: Value) -> Vec<Value> {
     value.as_array().unwrap().to_vec()
 }
 
-pub fn as_string(value: self::Value) -> String {
+pub fn as_string(value: Value) -> String {
     value.as_str().unwrap().to_string()
 }
 
-pub fn as_boolean(value: self::Value) -> bool {
+pub fn as_boolean(value: Value) -> bool {
     value.as_bool().unwrap()
 }
 
-pub fn as_u64(value: self::Value) -> u64 {
+pub fn as_u64(value: Value) -> u64 {
     value.as_u64().unwrap()
 }
 
-pub fn as_f64(value: self::Value) -> f64 {
+pub fn as_f64(value: Value) -> f64 {
     value.as_f64().unwrap()
 }
 
-pub fn as_i64(value: self::Value) -> i64 {
+pub fn as_i64(value: Value) -> i64 {
     value.as_i64().unwrap()
 }
 
