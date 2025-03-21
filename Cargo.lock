@@ -545,8 +545,18 @@ dependencies = [
 name = "inklang_json"
 version = "0.1.0"
 dependencies = [
+ "inklang_json_macro",
  "serde",
  "serde_json",
+]
+
+[[package]]
+name = "inklang_json_macro"
+version = "0.1.0"
+dependencies = [
+ "proc-macro2",
+ "quote",
+ "syn",
 ]
 
 [[package]]
