@@ -10,11 +10,8 @@ pub fn split(input: String, separator: String) -> inklang_array::Of<String> {
     input.split(&separator).map(|s| s.to_string()).collect()
 }
 
-pub fn concat(a: String, b: String) -> String {
-    let mut result = String::with_capacity(a.len() + b.len());
-    result.push_str(&a);
-    result.push_str(&b);
-    result
+pub fn concat(segments: inklang_array::Of<String>) -> String {
+    segments.concat()
 }
 
 #[cfg(test)]
@@ -44,9 +41,8 @@ mod tests {
 
     #[test]
     fn it_concats() {
-        let a: String = "hello".into();
-        let b: String = "world".into();
-        let result = concat(a, b);
+        let segments = vec!["hello".to_string(), "world".to_string()];
+        let result = concat(segments);
         assert_eq!(result, "helloworld");
     }
 }
