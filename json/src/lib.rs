@@ -62,18 +62,29 @@ pub fn as_optional_i64(value: Value) -> Option<i64> {
     value.as_i64()
 }
 
+pub fn is_defined(value: Value) -> bool {
+    !value.is_null()
+}
+
+pub fn is_undefined(value: Value) -> bool {
+    value.is_null()
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;
 
     #[test]
     fn it_parses() {
-        let mut json = parse(r#"{"key": "value", "key2": "value"}"#.into());
+        let mut json = parse(r#"{"key": "value", "key2": 2}"#.into());
 
         let key = get_property!(json, "key".to_string());
         let key2 = get_property!(json, "key2".to_string());
 
         assert_eq!(as_string(key), "value".to_string());
-        assert_eq!(as_string(key2), "value".to_string());
+        assert_eq!(as_u64(key2), 2);
+
+        let key3 = get_property!(json, "key3".to_string());
+        assert!(is_undefined(key3.clone()));
     }
 }
