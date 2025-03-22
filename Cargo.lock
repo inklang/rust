@@ -567,6 +567,10 @@ dependencies = [
 ]
 
 [[package]]
+name = "inklang_type"
+version = "0.1.0"
+
+[[package]]
 name = "inklang_url"
 version = "0.1.0"
 dependencies = [
