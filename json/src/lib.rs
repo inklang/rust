@@ -30,6 +30,38 @@ pub fn as_i64(value: Value) -> i64 {
     value.as_i64().unwrap()
 }
 
+pub fn as_optional_array(value: Value) -> Option<Vec<Value>> {
+    if let Some(array) = value.as_array() {
+        return Some(array.to_vec());
+    }
+
+    None
+}
+
+pub fn as_optional_string(value: Value) -> Option<String> {
+    if let Some(array) = value.as_str() {
+        return Some(array.to_string());
+    }
+
+    None
+}
+
+pub fn as_optional_boolean(value: Value) -> Option<bool> {
+    value.as_bool()
+}
+
+pub fn as_optional_u64(value: Value) -> Option<u64> {
+    value.as_u64()
+}
+
+pub fn as_optional_f64(value: Value) -> Option<f64> {
+    value.as_f64()
+}
+
+pub fn as_optional_i64(value: Value) -> Option<i64> {
+    value.as_i64()
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;
