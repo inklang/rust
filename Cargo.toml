@@ -7,6 +7,6 @@ members = [
   "url",
   "http",
   "bytes",
-  "type",
+  "option",
   "json_macro",
 ]

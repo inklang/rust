@@ -560,15 +560,15 @@ dependencies = [
 ]
 
 [[package]]
+name = "inklang_option"
+version = "0.1.0"
+
+[[package]]
 name = "inklang_string"
 version = "0.1.0"
 dependencies = [
  "inklang_array",
 ]
-
-[[package]]
-name = "inklang_type"
-version = "0.1.0"
 
 [[package]]
 name = "inklang_url"
