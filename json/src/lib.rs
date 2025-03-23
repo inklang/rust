@@ -1,4 +1,3 @@
-pub use serde::{Deserialize, Serialize};
 pub type Value = serde_json::Value;
 
 pub fn parse(json: String) -> Value {
